@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="0" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="0" JTAG_DRPre="0" IP="" TargetDevice="Cortex-M4" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="D:\T-DT\embedded\2024_Engineer\2024Engineer(�ڶ���)\project\Objects\GGBoard.axf" />
+            <Scope>
+                <Options TimeResolutionUs="1000000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="zPos" Address="0x2000438C" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.zPos" />
+            </Symbol>
+            <Symbol>
+                <Options Name="theta1" Address="0x20004390" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.theta1" />
+            </Symbol>
+            <Symbol>
+                <Options Name="theta2" Address="0x20004394" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.theta2" />
+            </Symbol>
+            <Symbol>
+                <Options Name="theta3" Address="0x20004398" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.theta3" />
+            </Symbol>
+            <Symbol>
+                <Options Name="theta4" Address="0x2000439C" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="255" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.theta4" />
+            </Symbol>
+            <Symbol>
+                <Options Name="theta5" Address="0x200043A0" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.theta5" />
+            </Symbol>
+            <Symbol>
+                <Options Name="theta6" Address="0x200043A4" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.theta6" />
+            </Symbol>
+            <Symbol>
+                <Options Name="theta7" Address="0x200043A8" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="1.79769e+308" YMaxSampled="-1.79769e+308" YAvgSampled="0" Offset="0" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="D:\T-DT\embedded\2024_Engineer\2024Engineer(第二版)\project/../algLib\kinematics.cpp" DrawStyle="0" NameWithParents="kinematics.setMech.theta7" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>
