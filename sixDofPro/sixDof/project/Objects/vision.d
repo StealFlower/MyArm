@@ -55,4 +55,12 @@
   ..\halLib\Inc\stm32g4xx_ll_pwr.h ..\halLib\Inc\stm32g4xx_ll_spi.h \
   ..\halLib\Inc\stm32g4xx_ll_tim.h ..\halLib\Inc\stm32g4xx_ll_usart.h \
   ..\halLib\Inc\stm32g4xx_ll_gpio.h ..\halLib\Inc\stm32g4xx_ll_lpuart.h \
-  ..\algLib\online.h ..\algLib\crc.h ..\user\schedule.h ..\user\board.h
+  ..\algLib\online.h ..\taskLib\devList.h ..\module\chassis.h \
+  ..\devLib\motor.h ..\algLib\pid.h ..\algLib\cycle.h ..\bspLib\fdcan.h \
+  ..\algLib\varCalt.h ..\algLib\filter.h ..\algLib\asr.h \
+  ..\module\gimbal.h ..\module\imageTran.h ..\module\air.h \
+  ..\devLib\gugu.h ..\devLib\doubleMotor.h ..\devLib\motor.h \
+  ..\devLib\dmMotor.h ..\algLib\cycle.h ..\devLib\cyberMotor.h \
+  ..\devLib\utMotor.h ..\algLib\crc.h ..\algLib\pathPlan.h \
+  ..\devLib\wrist.h ..\devLib\doubleMotor.h ..\devLib\dbus.h \
+  ..\algLib\kinematics.h ..\user\schedule.h ..\user\board.h

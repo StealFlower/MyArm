@@ -26,6 +26,7 @@ extern DmMotor Pitch2;
 extern Motor Roll1;
 extern Motor LeftMotor;
 extern Motor RightMotor;
+extern Motor SVCMotor;
 extern Wrist wrist;
 extern MitParam Yaw1Param[2];
 extern MitParam Pitch1Param[2];

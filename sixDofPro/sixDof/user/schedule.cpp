@@ -47,12 +47,8 @@ void boardALLInit(void)
 void TDT_Loop_1000Hz(void) // 1ms执行一次
 {
 }
-uint32_t gap,tim1,tim2;
 void TDT_Loop_500Hz(void) // 2ms执行一次
 {
-    tim1 = getSysTimeUs();
-    gap  =tim1 -tim2;
-    tim2  = tim1;
 	// 遥控器跳变按下松开动作检测
 	rcCtrl.motionDetect();
     // 遥控器任务调度
@@ -68,14 +64,13 @@ void TDT_Loop_500Hz(void) // 2ms执行一次
 			VirtualTask::taskList[i]->run();
 	}        
     DEBUG();
+    
 //	// CAN通讯处理
 	if (RobotEnable == DISABLE)
 		can.disforceHandle();//脱力时CAN发送消息处理
 	can.sendMsg();
 
     // 视觉通信
-    //vision.sendData(AcquireRecognize);
-
 	// AllOnlineObject离线检查
 	for (uint8_t i = 0; i < onlineNum; i++)
 		onlinePtrList[i]->check();
@@ -90,6 +85,8 @@ void TDT_Loop_500Hz(void) // 2ms执行一次
 
 void TDT_Loop_200Hz(void) // 5ms执行一次
 {
+    vision.sendData();
+
 }
 
 float current;

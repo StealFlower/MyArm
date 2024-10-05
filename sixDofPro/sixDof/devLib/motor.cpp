@@ -415,7 +415,6 @@ void Motor::canHandle(uint8_t *pRxData)
 
     if(motorInfo.type == GM6020)
         canInfo.totalRound =0;
-    else{
     /*计算电机旋转总圈数*/
     if (canInfo.encoderCalibration - canInfo.lastEncoderCalibration > 4096)
     {
@@ -424,7 +423,6 @@ void Motor::canHandle(uint8_t *pRxData)
     else if (canInfo.encoderCalibration - canInfo.lastEncoderCalibration < -4096)
     {
         canInfo.totalRound++;
-    }
     }
     /*计算电机旋转总机械角度值*/
     canInfo.totalEncoder = (canInfo.totalRound * 8192 + canInfo.encoderCalibration);

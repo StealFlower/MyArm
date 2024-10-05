@@ -272,20 +272,20 @@ JointTorque Dynamics::GetJointTorque(JointState jointstate)
     JointTorque Joint_Torque;
     double tao3, tao2, tao1, n11x, n11y, n11z, n22y, n22x, n33x, n33y, n33z;
     double q1, qd1, qdd1, q2, qd2, qdd2, q3, qd3, qdd3;   //关节状态
-    double a1, a2, a3, m1, m2, m3;
+    double a1, a2, a3, m1, m2, m3,acc1,acc2;
     double Ixx1, Iyy1, Izz1, Ixx2, Izz2, Iyy2, Izz3, Ixx3, Iyy3;
     double M1_Q1, C1_Q1Q3, C1_Q1Q2, G2, C2_Q1Q1, C2_Q2Q2, C2_Q2Q3, C2_Q3Q3, M2_Q3, M2_Q2, G3, C3_Q1Q1, C3_Q2Q2, M3_Q3, M3_Q2;
     q1 = jointstate.q1; qd1 = jointstate.dq1; qdd1 = jointstate.ddq1;
     q2 = jointstate.q2; qd2 = jointstate.dq2; qdd2 = jointstate.ddq2;
     q3 = jointstate.q3; qd3 = jointstate.dq3; qdd3 = jointstate.ddq3;
 
-    a1 = 0; a2 = 0.237; a3 = 0.33;
-    m1 = 0; m2 = 0.75;  m3 = 1.3;
+    a1 = 0; a2 = 0.237; a3 = 0.33,acc1=0.14925,acc2=0.24214;
+    m1 = 0; m2 = 1;  m3 = 1.6;
     Izz1 = 0;Ixx2 = 0.0095;Ixx3 = 0.0134;
     Iyy1 = 0; Iyy2 = 0.007;Iyy3 = 0.01711;
     Ixx1 = 0;Izz2 = 0.0074; Izz3 = 0.0052;
 
-    G3 = a3 * m3 * cosf(q2 + q3) * 9.81;
+    G3 = acc2 * m3 * cosf(q2 + q3) * 9.81;
     C3_Q1Q1 = a3 * m3 * ((0.5 * a2 * sinf(q3) + 0.5 * a3 * sinf(2 * (q2 + q3)) + 0.5 * a2 * sinf(2 * q2 + q3))) + 0.5 * Iyy3 * sinf(2 * (q2 + q3));
     C3_Q2Q2 = a3 * m3 * a2 * sinf(q3);
     M3_Q3 = (a3 * a3 * m3 + Izz3);
@@ -294,7 +294,7 @@ JointTorque Dynamics::GetJointTorque(JointState jointstate)
     tao3 = M3_Q2 * qdd2 + M3_Q3 * qdd3 + C3_Q1Q1 * qd1 * qd1 + C3_Q2Q2 * qd2 * qd2 + G3;
 
     
-    G2 = tao3 + a2 * cosf(q2) * (9.81 * m2 + 9.81 * m3);
+    G2 = tao3 + acc1 * cosf(q2) * (9.81 * m2 + 9.81 * m3);
     C2_Q1Q1 = a2 * (a2 * sinf(2 * q2) * 0.5 * (m2 + m3) + a3 * m3 * (-0.5 * sinf(q3) + 0.5 * sinf(2 * q2 + q3))) + 0.5 * sinf(2 * q2) * Iyy2;
     C2_Q2Q2 = -a2 * a3 * m3 * sinf(q3);
     C2_Q2Q3 = -2 * a2 * a3 * m3 * sinf(q3);
@@ -362,30 +362,51 @@ JointState Dynamics::JointToEndPoint(JointState joint_state)
 }
 
 //阻抗控制：F = M x a+ C * v + K * x;M惯性参数，C阻尼系数，K刚度系数
-float K[3]={0,0,0},C[3]={0,18,0},M[3]={0,0,0};//0.3 0.4 0.3
+float K[3]={0,0,0},C[3]={0,0,0},M[3]={0,0,0};//0.3 0.4 0.3
 Kf Dkf1,Dkf2,Dkf3;
-float last_err_dq[3];
+Kf kf1,kf2,kf3;
+
+JointState Estate;
+JointTorque testTor;
+
+JointState testState1,testState2;
 //输入期望关节状态
 //感觉效果不是特别好，阻尼系数给大后就开始抖动
 JointTorque Dynamics::ImpedanceControl(JointState desired_state)
 {
     JointTorque tempTao;      
     JointTorque estimateT;
-        
+ 
+    float dq[3],q[3];
+    
     nowJointState = GetNowJointState();
     JointState Estate = JointToEndPoint(desired_state) - JointToEndPoint(nowJointState);
- 
+    
+    testState1 = JointToEndPoint(desired_state);
+    testState2 = JointToEndPoint(nowJointState);
+    
+    q[0]  = Estate.q1;
+    q[1]  = Estate.q2;
+    q[2]  = Estate.q3;
+    
+//    q[0] = kf1.KalmanFilter(Estate.q1,1,100,0);
+//    q[1] = kf1.KalmanFilter(Estate.q2,1,100,0);
+//    q[2] = kf1.KalmanFilter(Estate.q3,1,100,0);
+    
     float F[3];//-3 -40 10
     
-    float dq[3];
     dq[0] = Dkf1.KalmanFilter(Estate.dq1,0.3,100,0);
     dq[1] = Dkf2.KalmanFilter(Estate.dq2,0.3,100,0);
     dq[2] = Dkf3.KalmanFilter(Estate.dq3,0.3,100,0);
     
-    F[0] = C[0]*dq[0];
-    F[1] = C[1]*dq[1];
-    F[2] = C[2]*dq[2];  
+    F[0] = C[0]*dq[0]+K[0]*q[0];
+    F[1] = C[1]*dq[1]+K[1]*q[1];
+    F[2] = C[2]*dq[2]+K[2]*q[2];  
     
+    testTor.tao1 = F[0];
+    testTor.tao2 = F[1];
+    testTor.tao3 = F[2];
+   
 //  -s1*c2*l1 - s1*c23*l2  -c1*s2*l1-c1*s23*l2  -c1*s23*l2
 //  c1*c2*l1 + c1*c23*l2  -s1*s2*l1-s1*s23*l2  -s1*s23*l2
 //  0                     c2*l1+c23*l2         c23*l2
@@ -400,9 +421,9 @@ JointTorque Dynamics::ImpedanceControl(JointState desired_state)
     tempState.q1 = nowJointState.q1;//q1_b
     tempState.q2 = nowJointState.q2;//q2_b
     tempState.q3 = nowJointState.q3;//q3_b
-    tempState.dq1 = 0;//qd1_b
-    tempState.dq2 = 0;//qd2_b
-    tempState.dq3 = 0;//qd3_b
+    tempState.dq1 = nowJointState.dq1;//qd1_b
+    tempState.dq2 = nowJointState.dq2;//qd2_b
+    tempState.dq3 = nowJointState.dq3;//qd3_b
     tempState.ddq1 = 0;//v1
     tempState.ddq2 = 0;//v2
     tempState.ddq3 = 0;//v3
