@@ -85,8 +85,6 @@ void TDT_Loop_500Hz(void) // 2ms执行一次
 
 void TDT_Loop_200Hz(void) // 5ms执行一次
 {
-    vision.sendData();
-
 }
 
 float current;

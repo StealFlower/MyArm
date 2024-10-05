@@ -364,8 +364,7 @@ JointState Dynamics::JointToEndPoint(JointState joint_state)
 //阻抗控制：F = M x a+ C * v + K * x;M惯性参数，C阻尼系数，K刚度系数
 float K[3]={0,0,0},C[3]={0,0,0},M[3]={0,0,0};//0.3 0.4 0.3
 Kf Dkf1,Dkf2,Dkf3;
-Kf kf1,kf2,kf3;
-
+ 
 JointState Estate;
 JointTorque testTor;
 
@@ -388,10 +387,6 @@ JointTorque Dynamics::ImpedanceControl(JointState desired_state)
     q[0]  = Estate.q1;
     q[1]  = Estate.q2;
     q[2]  = Estate.q3;
-    
-//    q[0] = kf1.KalmanFilter(Estate.q1,1,100,0);
-//    q[1] = kf1.KalmanFilter(Estate.q2,1,100,0);
-//    q[2] = kf1.KalmanFilter(Estate.q3,1,100,0);
     
     float F[3];//-3 -40 10
     
