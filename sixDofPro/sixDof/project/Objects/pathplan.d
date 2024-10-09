@@ -55,4 +55,4 @@
   ..\halLib\Inc\stm32g4xx_ll_pwr.h ..\halLib\Inc\stm32g4xx_ll_spi.h \
   ..\halLib\Inc\stm32g4xx_ll_tim.h ..\halLib\Inc\stm32g4xx_ll_usart.h \
   ..\halLib\Inc\stm32g4xx_ll_gpio.h ..\halLib\Inc\stm32g4xx_ll_lpuart.h \
-  ..\algLib\cycle.h ..\algLib\kinematics.h
+  ..\algLib\cycle.h ..\algLib\kinematics.h ..\algLib\dynamics.h

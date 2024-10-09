@@ -13,8 +13,7 @@
 #include "pathPlan.h"
 #include "wrist.h"
 #include "dbus.h"
-#include "kinematics.h"
-
+#include "arm.h"
 
 extern Chassis chassis;
 extern Gimbal gimbal;

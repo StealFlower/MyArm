@@ -8,7 +8,6 @@
 #include "vision.h"
 #include "SMUniversal.h"
 #include "oreMotionStateMachine.h"
-#include "kinematics.h"
 /*初始化完成标志*/
 uint8_t Init_OK;
 /*机器人使能标志*/

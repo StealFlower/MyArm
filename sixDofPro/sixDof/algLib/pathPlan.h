@@ -3,7 +3,7 @@
 #include "board.h"
 #include "cycle.h"
 #include "kinematics.h"
-
+#include "dynamics.h"
 // 五次六项式曲线轨迹规划
 typedef struct 
 {

@@ -64,7 +64,8 @@
   ..\devLib\doubleMotor.h ..\devLib\motor.h ..\devLib\dmMotor.h \
   ..\algLib\cycle.h ..\devLib\cyberMotor.h ..\devLib\utMotor.h \
   ..\algLib\crc.h ..\algLib\pathPlan.h ..\algLib\kinematics.h \
-  ..\devLib\wrist.h ..\devLib\doubleMotor.h ..\algLib\kinematics.h \
+  ..\algLib\dynamics.h ..\devLib\wrist.h ..\devLib\doubleMotor.h \
+  ..\devLib\arm.h ..\algLib\kinematics.h ..\algLib\dynamics.h \
   ..\devLib\vision.h ..\motLib\SMUniversal.h ..\algLib\stateMachine.h \
   ..\module\oreBin.h ..\motLib\oreMotionStateMachine.h \
   ..\motLib\SMUniversal.h

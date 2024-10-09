@@ -1,5 +1,5 @@
-./objects/devlist.o: ..\taskLib\devList.cpp ..\taskLib\devList.h \
-  ..\module\chassis.h ..\user\board.h ..\halLib\Inc\stm32g4xx_hal.h \
+./objects/arm.o: ..\devLib\arm.cpp ..\devLib\arm.h ..\algLib\kinematics.h \
+  ..\user\board.h ..\halLib\Inc\stm32g4xx_hal.h \
   ..\user\stm32g4xx_hal_conf.h ..\halLib\Inc\stm32g4xx_hal_rcc.h \
   ..\halLib\Inc\stm32g4xx_hal_def.h ..\user\stm32g4xx.h \
   C:\Users\20234\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.5.0\Drivers\CMSIS\Device\ST\STM32G4xx\Include\stm32g473xx.h \
@@ -55,13 +55,14 @@
   ..\halLib\Inc\stm32g4xx_ll_pwr.h ..\halLib\Inc\stm32g4xx_ll_spi.h \
   ..\halLib\Inc\stm32g4xx_ll_tim.h ..\halLib\Inc\stm32g4xx_ll_usart.h \
   ..\halLib\Inc\stm32g4xx_ll_gpio.h ..\halLib\Inc\stm32g4xx_ll_lpuart.h \
+  ..\algLib\dynamics.h ..\algLib\cycle.h ..\motLib\SMUniversal.h \
+  ..\algLib\stateMachine.h ..\taskLib\devList.h ..\module\chassis.h \
   ..\devLib\motor.h ..\algLib\online.h ..\algLib\pid.h ..\algLib\cycle.h \
   ..\bspLib\fdcan.h ..\algLib\varCalt.h ..\algLib\filter.h \
   ..\algLib\asr.h ..\module\gimbal.h ..\module\imageTran.h \
   ..\module\air.h ..\devLib\gugu.h ..\devLib\doubleMotor.h \
-  ..\devLib\motor.h ..\devLib\dmMotor.h ..\algLib\cycle.h \
-  ..\devLib\cyberMotor.h ..\devLib\utMotor.h ..\algLib\crc.h \
-  ..\algLib\pathPlan.h ..\algLib\kinematics.h ..\algLib\dynamics.h \
-  ..\devLib\wrist.h ..\devLib\doubleMotor.h ..\devLib\dbus.h \
-  ..\devLib\arm.h ..\algLib\kinematics.h ..\algLib\dynamics.h \
-  ..\devLib\vision.h ..\taskLib\devList.h
+  ..\devLib\motor.h ..\devLib\dmMotor.h ..\devLib\cyberMotor.h \
+  ..\devLib\utMotor.h ..\algLib\crc.h ..\algLib\pathPlan.h \
+  ..\algLib\kinematics.h ..\algLib\dynamics.h ..\devLib\wrist.h \
+  ..\devLib\doubleMotor.h ..\devLib\dbus.h ..\devLib\arm.h \
+  ..\module\oreBin.h

@@ -339,7 +339,7 @@
               <MiscControls>-Wno-pragma-pack</MiscControls>
               <Define>STM32G473xx,USE_HAL_DRIVER,ARM_MATH_CM4,ARM_MATH_MATRIX_CHECK,ARM_MATH_ROUNDING,USE_FULL_LL_DRIVER,CCMRAM</Define>
               <Undefine></Undefine>
-              <IncludePath>..\algLib;..\bspLib;..\devLib;..\halLib;..\user;..\halLib\Inc;..\taskLib;..\dspLib;..\motLib;..\module;..\algLib\eigen-3.4.0;..\algLib\eigen-3.4.0\Eigen</IncludePath>
+              <IncludePath>..\bspLib;..\devLib;..\halLib;..\user;..\halLib\Inc;..\taskLib;..\dspLib;..\motLib;..\module;..\algLib\eigen-3.4.0;..\algLib\eigen-3.4.0\Eigen;..\algLib</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -578,6 +578,11 @@
               <FileType>8</FileType>
               <FilePath>..\devLib\doubleMotor.cpp</FilePath>
             </File>
+            <File>
+              <FileName>arm.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\devLib\arm.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -637,6 +642,11 @@
               <FileName>kinematics.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\algLib\kinematics.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>dynamics.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\algLib\dynamics.cpp</FilePath>
             </File>
           </Files>
         </Group>
