@@ -6,8 +6,8 @@
 Kinematics::Kinematics()
 {
     // 机械参数加载
-    mech.l1 = 237;
-    mech.l2 = 340;
+    mech.l1 = 0.237;
+    mech.l2 = 0.340;
 }
 //注意输入输出
 //输入：nowJoint_Mech 读出的电机的原始数据 --需要先给nowJoint_Mech赋值
@@ -59,6 +59,52 @@ EndPoint Kinematics::GetNowEndPoint(void)
     tempPoint.roll = euler[roll] * 0.017452007f;
     
     return tempPoint;  
+}
+
+JointState Kinematics::GetNowEndState(void) 
+{
+    JointState tempState;
+    nowJoint_Rps.theta1 = nowJoint_Mech.theta1*THETA1_MECH_TO_RPS_RATIO;
+    nowJoint_Rps.theta2 = (nowJoint_Mech.theta2-90)*THETA2_MECH_TO_RPS_RATIO;
+    nowJoint_Rps.theta3 = nowJoint_Mech.theta3*THETA3_MECH_TO_RPS_RATIO;
+    nowJoint_Rps.theta4 = (nowJoint_Mech.theta4-180)*THETA4_MECH_TO_RPS_RATIO;
+    nowJoint_Rps.theta5 = nowJoint_Mech.theta5*THETA5_MECH_TO_RPS_RATIO;
+    nowJoint_Rps.theta6 = nowJoint_Mech.theta6*THETA6_MECH_TO_RPS_RATIO;
+    
+    //x,y,z正解
+    float c1,s1,c2,s2,c23,s23;
+    
+    c1 = cosf(nowJoint_Rps.theta1);
+    s1 = sinf(nowJoint_Rps.theta1);
+    c2 = cosf(nowJoint_Rps.theta2);
+    s2 = sinf(nowJoint_Rps.theta2);    
+    c23 = cosf(nowJoint_Rps.theta2 + nowJoint_Rps.theta3);
+    s23 = sinf(nowJoint_Rps.theta2 + nowJoint_Rps.theta3);
+    
+    tempState.q1 = c1*(c2*mech.l1 + c23*mech.l2);
+    tempState.q2 = s1*(c2*mech.l1 + c23*mech.l2);
+    tempState.q3 = mech.l1*s2 + mech.l2*s23;
+
+//  -s1*c2*l1 - s1*c23*l2  -c1*s2*l1-c1*s23*l2  -c1*s23*l2
+//  c1*c2*l1 + c1*c23*l2  -s1*s2*l1-s1*s23*l2  -s1*s23*l2
+//  0                     c2*l2+c23*l2         c23*l2
+    float Jacobin[3][3] = {
+                    {-s1*c2*mech.l1 - s1*c23*mech.l2,-c1*s2*mech.l1-c1*s23*mech.l2,-c1*s23*mech.l2},
+                    {c1*c2*mech.l1 + c1*c23*mech.l2,-s1*s2*mech.l1-s1*s23*mech.l2,-s1*s23*mech.l2},
+                    {0,c2*mech.l2+c23*mech.l2,c23*mech.l2}};
+    float v[3] = {-Yaw1.canInfo.vel_rads,-Pitch1.canInfo.vel_rads,Pitch2.canInfo.vel_rads};
+    
+    tempState.dq1 = Jacobin[0][0]*v[0]+Jacobin[0][1]*v[1]+Jacobin[0][2]*v[2];
+    tempState.dq2 = Jacobin[1][0]*v[0]+Jacobin[1][1]*v[1]+Jacobin[1][2]*v[2];
+    tempState.dq3 = Jacobin[2][0]*v[0]+Jacobin[2][1]*v[1]+Jacobin[2][2]*v[2];
+    
+    float f[3] = {-Yaw1.canInfo.toq_nm,-Pitch1.canInfo.toq_nm,Pitch2.canInfo.toq_nm};
+    
+    tempState.ddq1 = Jacobin[0][0]*f[0]+Jacobin[0][1]*f[1]+Jacobin[0][2]*f[2];
+    tempState.ddq2 = Jacobin[1][0]*f[0]+Jacobin[1][1]*f[1]+Jacobin[1][2]*f[2];
+    tempState.ddq3 = Jacobin[2][0]*f[0]+Jacobin[2][1]*f[1]+Jacobin[2][2]*f[2];    
+    
+    return tempState;  
 }
 
 //机械臂正运动学
@@ -427,6 +473,18 @@ JointTorque Dynamics::ImpedanceControl(JointState desired_state)
    
     return estimateT;
 } 
+
+float K_1 = 0.0002;
+EndPoint Dynamics::AdmittanceControl(JointTorque desired_torque) 
+{
+    EndPoint tempPoint;
+    
+    tempPoint.xPos = desired_torque.tao1 * K_1;
+    tempPoint.yPos = desired_torque.tao2 * K_1;
+    tempPoint.zPos = desired_torque.tao3 * K_1;
+    
+    return tempPoint;
+}
 
 Kinematics kinematics;
 Dynamics dynamics;

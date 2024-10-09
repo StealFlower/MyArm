@@ -201,6 +201,7 @@ public:
     JointAngle GetNowJointAngle(EndPoint tarEndPoint,u8 elbm = 1);
     EndPoint GetNowEndPoint(void);
     EndPoint GetNowEndPoint(JointAngle nowJointdps);
+    JointState GetNowEndState(void); 
 
     EndPoint moveAlongAxis(float deltaPos, EndPoint _prePoint); // 求解沿轴线运动的坐标变化
 
@@ -228,6 +229,7 @@ public:
     JointState GetNowJointState(void);
     JointState nowJointState;
     JointState JointToEndPoint(JointState joint_state);
+    EndPoint AdmittanceControl(JointTorque desired_torque); 
 
 };
 extern Kinematics kinematics;

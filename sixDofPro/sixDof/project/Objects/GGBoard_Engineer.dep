@@ -157,7 +157,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-F (..\user\schedule.cpp)(0x66FE50E1)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/schedule.o -MD)
+F (..\user\schedule.cpp)(0x670526CD)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/schedule.o -MD)
 I (..\user\schedule.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
 I (..\halLib\Inc\stm32g4xx_hal.h)(0x666D66EF)
@@ -246,7 +246,7 @@ I (..\algLib\pid.h)(0x666D66EF)
 I (..\algLib\cycle.h)(0x666D66EF)
 I (..\algLib\varCalt.h)(0x666D66EF)
 I (..\algLib\filter.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\algLib\asr.h)(0x666D66EF)
 I (..\module\gimbal.h)(0x666D66EF)
@@ -258,10 +258,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
-I (..\devLib\vision.h)(0x66FE4F22)
+I (..\devLib\vision.h)(0x67013289)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
 I (..\algLib\stateMachine.h)(0x666D66EF)
 I (..\module\oreBin.h)(0x666D66EF)
@@ -346,8 +346,8 @@ I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\user\stm32g4xx_it.h)(0x666D66EF)
 I (..\user\schedule.h)(0x666D66EF)
-F (..\taskLib\devList.cpp)(0x66FFB6EB)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/devlist.o -MD)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+F (..\taskLib\devList.cpp)(0x67055CD5)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/devlist.o -MD)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
 I (..\halLib\Inc\stm32g4xx_hal.h)(0x666D66EF)
@@ -443,11 +443,11 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
-I (..\devLib\vision.h)(0x66FE4F22)
+I (..\devLib\vision.h)(0x67013289)
 F (..\taskLib\ledTask.cpp)(0x66D2B9BB)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/ledtask.o -MD)
 I (..\taskLib\ledTask.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
@@ -530,7 +530,7 @@ I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\algLib\virtualTask.h)(0x666D66EF)
 I (..\bspLib\iwdg.h)(0x666D66EF)
 I (..\devLib\led.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -549,10 +549,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 F (..\taskLib\stateTask.cpp)(0x66F2F0C4)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/statetask.o -MD)
 I (..\algLib\virtualTask.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
@@ -636,7 +636,7 @@ I (..\taskLib\stateTask.h)(0x666D66EF)
 I (..\motLib\offsetStateMachine.h)(0x666D66EF)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
 I (..\algLib\stateMachine.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -655,13 +655,13 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
-I (..\devLib\vision.h)(0x66FE4F22)
+I (..\devLib\vision.h)(0x67013289)
 F (..\taskLib\chassisTask.cpp)(0x66D2B9BB)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/chassistask.o -MD)
 I (..\taskLib\chassisTask.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
@@ -744,7 +744,7 @@ I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\algLib\virtualTask.h)(0x666D66EF)
 I (..\devLib\dbus.h)(0x66F60B7C)
 I (..\algLib\online.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\pid.h)(0x666D66EF)
@@ -762,9 +762,9 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 F (..\taskLib\gimbalTask.cpp)(0x66D2B9BB)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/gimbaltask.o -MD)
 I (..\algLib\virtualTask.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
@@ -844,7 +844,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -863,10 +863,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 F (..\taskLib\judgeTask.cpp)(0x66D2B9BB)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/judgetask.o -MD)
 I (..\taskLib\judgeTask.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
@@ -952,7 +952,7 @@ I (..\algLib\online.h)(0x666D66EF)
 I (..\module\judge.h)(0x666D66EF)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
 I (..\algLib\stateMachine.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\pid.h)(0x666D66EF)
@@ -970,10 +970,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\SMUniversal.cpp)(0x66D2B9BB)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/smuniversal.o -MD)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
@@ -1055,7 +1055,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1074,10 +1074,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\offsetStateMachine.cpp)(0x66D2BA4F)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/offsetstatemachine.o -MD)
 I (..\motLib\offsetStateMachine.h)(0x666D66EF)
@@ -1160,7 +1160,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1179,10 +1179,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\oreMotionStateMachine.cpp)(0x66D2BB5F)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/oremotionstatemachine.o -MD)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
@@ -1265,7 +1265,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1284,10 +1284,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\takeGoldState.cpp)(0x66D2BA4F)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/takegoldstate.o -MD)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
@@ -1370,7 +1370,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1389,10 +1389,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\takeSilveryState.cpp)(0x66D2BB3B)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/takesilverystate.o -MD)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
@@ -1475,7 +1475,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1494,10 +1494,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\pickOreState.cpp)(0x66D2BB3C)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/pickorestate.o -MD)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
@@ -1580,7 +1580,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1599,10 +1599,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\exchangeOreState.cpp)(0x66D2BB3C)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/exchangeorestate.o -MD)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
@@ -1685,7 +1685,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1704,12 +1704,12 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
-I (..\devLib\vision.h)(0x66FE4F22)
+I (..\devLib\vision.h)(0x67013289)
 F (..\motLib\handModeState.cpp)(0x66D2BB3C)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/handmodestate.o -MD)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
@@ -1791,7 +1791,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1810,10 +1810,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\motLib\hidArmorState.cpp)(0x66D2BB3C)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/hidarmorstate.o -MD)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
@@ -1896,7 +1896,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -1915,10 +1915,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 I (..\devLib\judgement.h)(0x666D66EF)
 F (..\motLib\checkOreState.cpp)(0x66D2BB3C)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/checkorestate.o -MD)
@@ -2002,7 +2002,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -2021,10 +2021,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 I (..\devLib\judgement.h)(0x666D66EF)
 F (..\module\chassis.cpp)(0x66D2BC92)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/chassis.o -MD)
@@ -2115,7 +2115,7 @@ I (..\algLib\varCalt.h)(0x666D66EF)
 I (..\algLib\filter.h)(0x666D66EF)
 I (..\algLib\asr.h)(0x666D66EF)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\gimbal.h)(0x666D66EF)
 I (..\module\imageTran.h)(0x669929A6)
 I (..\module\air.h)(0x666D66EF)
@@ -2125,14 +2125,14 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
 I (..\algLib\stateMachine.h)(0x666D66EF)
 I (..\module\oreBin.h)(0x666D66EF)
-I (..\devLib\vision.h)(0x66FE4F22)
+I (..\devLib\vision.h)(0x67013289)
 F (..\module\gimbal.cpp)(0x666D66EF)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/gimbal.o -MD)
 I (..\module\gimbal.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
@@ -2223,7 +2223,7 @@ I (..\devLib\dbus.h)(0x66F60B7C)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
 I (..\algLib\stateMachine.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\algLib\asr.h)(0x666D66EF)
 I (..\module\imageTran.h)(0x669929A6)
@@ -2234,9 +2234,9 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 F (..\module\judge.cpp)(0x66D2BCC8)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/judge.o -MD)
 I (..\module\judge.h)(0x666D66EF)
@@ -2319,7 +2319,7 @@ I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
 I (..\algLib\stateMachine.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -2338,14 +2338,14 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\module\oreBin.h)(0x666D66EF)
 I (..\devLib\judgement.h)(0x666D66EF)
 I (..\motLib\oreMotionStateMachine.h)(0x669929A6)
-I (..\devLib\vision.h)(0x66FE4F22)
+I (..\devLib\vision.h)(0x67013289)
 F (..\module\imageTran.cpp)(0x669C9C72)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/imagetran.o -MD)
 I (..\module\imageTran.h)(0x669929A6)
 I (..\user\board.h)(0x66D2B3A3)
@@ -2427,7 +2427,7 @@ I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\bspLib\fdcan.h)(0x666D66EF)
 I (..\algLib\filter.h)(0x666D66EF)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
+I (..\algLib\kinematics.h)(0x67055536)
 F (..\module\air.cpp)(0x666D66EF)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/air.o -MD)
 I (..\module\air.h)(0x666D66EF)
 I (..\bspLib\fdcan.h)(0x666D66EF)
@@ -2673,7 +2673,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-F (..\devLib\motor.cpp)(0x66FF8F6C)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/motor.o -MD)
+F (..\devLib\motor.cpp)(0x67053D71)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/motor.o -MD)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
 I (..\halLib\Inc\stm32g4xx_hal.h)(0x666D66EF)
@@ -3004,8 +3004,8 @@ I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-F (..\devLib\vision.cpp)(0x66FF5736)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/vision.o -MD)
-I (..\devLib\vision.h)(0x66FE4F22)
+F (..\devLib\vision.cpp)(0x67013289)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/vision.o -MD)
+I (..\devLib\vision.h)(0x67013289)
 I (..\user\board.h)(0x66D2B3A3)
 I (..\halLib\Inc\stm32g4xx_hal.h)(0x666D66EF)
 I (..\user\stm32g4xx_hal_conf.h)(0x666D66EF)
@@ -3084,7 +3084,7 @@ I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\pid.h)(0x666D66EF)
@@ -3102,10 +3102,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 I (..\user\schedule.h)(0x666D66EF)
 F (..\devLib\gugu.cpp)(0x666D66EF)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/gugu.o -MD)
 I (..\devLib\gugu.h)(0x666D66EF)
@@ -3755,8 +3755,8 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-F (..\algLib\pathPlan.cpp)(0x66F2E932)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/pathplan.o -MD)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+F (..\algLib\pathPlan.cpp)(0x67053D71)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/pathplan.o -MD)
+I (..\algLib\pathPlan.h)(0x670535E5)
 I (..\user\board.h)(0x66D2B3A3)
 I (..\halLib\Inc\stm32g4xx_hal.h)(0x666D66EF)
 I (..\user\stm32g4xx_hal_conf.h)(0x666D66EF)
@@ -3835,6 +3835,7 @@ I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\algLib\cycle.h)(0x666D66EF)
+I (..\algLib\kinematics.h)(0x67055536)
 F (..\algLib\filter.cpp)(0x666D66EF)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/filter.o -MD)
 I (..\algLib\filter.h)(0x666D66EF)
 I (..\user\board.h)(0x66D2B3A3)
@@ -4152,8 +4153,8 @@ I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\algLib\cycle.h)(0x666D66EF)
-F (..\algLib\kinematics.cpp)(0x66FECD35)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/kinematics.o -MD)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
+F (..\algLib\kinematics.cpp)(0x67055AD5)(-xc++ -std=gnu++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/kinematics.o -MD)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\user\board.h)(0x66D2B3A3)
 I (..\halLib\Inc\stm32g4xx_hal.h)(0x666D66EF)
 I (..\user\stm32g4xx_hal_conf.h)(0x666D66EF)
@@ -4233,7 +4234,7 @@ I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
 I (..\motLib\SMUniversal.h)(0x66D2B9BB)
 I (..\algLib\stateMachine.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -4252,7 +4253,7 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
 I (..\module\oreBin.h)(0x666D66EF)
@@ -4414,7 +4415,7 @@ I (..\halLib\Inc\stm32g4xx_ll_tim.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_usart.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_gpio.h)(0x666D66EF)
 I (..\halLib\Inc\stm32g4xx_ll_lpuart.h)(0x666D66EF)
-I (..\taskLib\devList.h)(0x66FEC1E8)
+I (..\taskLib\devList.h)(0x670526CD)
 I (..\module\chassis.h)(0x666D66EF)
 I (..\devLib\motor.h)(0x666D66EF)
 I (..\algLib\online.h)(0x666D66EF)
@@ -4432,10 +4433,10 @@ I (..\devLib\dmMotor.h)(0x66F61412)
 I (..\devLib\cyberMotor.h)(0x666D66EF)
 I (..\devLib\utMotor.h)(0x666D66EF)
 I (..\algLib\crc.h)(0x666D66EF)
-I (..\algLib\pathPlan.h)(0x66F2E928)
+I (..\algLib\pathPlan.h)(0x670535E5)
+I (..\algLib\kinematics.h)(0x67055536)
 I (..\devLib\wrist.h)(0x66F54100)
 I (..\devLib\dbus.h)(0x66F60B7C)
-I (..\algLib\kinematics.h)(0x66FAD0A6)
 F (..\halLib\startup_stm32g473xx.s)(0x666D66EF)(--cpu Cortex-M4.fp.sp -g --pd "__MICROLIB SETA 1"-I.\RTE\_Engineer-IC:\Users\20234\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\20234\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.5.0\Drivers\CMSIS\Device\ST\STM32G4xx\Include--pd "__UVISION_VERSION SETA 531"--pd "_RTE_ SETA 1"--pd "STM32G473xx SETA 1"--pd "_RTE_ SETA 1"--list .\startup_stm32g473xx.lst--xref -o .\objects\startup_stm32g473xx.o--depend .\objects\startup_stm32g473xx.d)
 F (..\user\system_stm32g4xx.c)(0x666D66EF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-3 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../algLib -I ../bspLib -I ../devLib -I ../halLib -I ../user -I ../halLib/Inc -I ../taskLib -I ../dspLib -I ../motLib -I ../module -I ../algLib/eigen-3.4.0 -I ../algLib/eigen-3.4.0/Eigen -Wno-pragma-pack-I./RTE/_Engineer-IC:/Users/20234/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/20234/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.5.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32G473xx -D_RTE_ -DSTM32G473xx -DUSE_HAL_DRIVER -DARM_MATH_CM4 -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING -DUSE_FULL_LL_DRIVER -DCCMRAM-o ./objects/system_stm32g4xx.o -MD)
 I (..\user\stm32g4xx.h)(0x666D66EF)

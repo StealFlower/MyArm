@@ -63,5 +63,5 @@
   ..\devLib\gugu.h ..\devLib\doubleMotor.h ..\devLib\motor.h \
   ..\devLib\dmMotor.h ..\algLib\cycle.h ..\devLib\cyberMotor.h \
   ..\devLib\utMotor.h ..\algLib\crc.h ..\algLib\pathPlan.h \
-  ..\devLib\wrist.h ..\devLib\doubleMotor.h ..\devLib\dbus.h \
-  ..\algLib\kinematics.h
+  ..\algLib\kinematics.h ..\devLib\wrist.h ..\devLib\doubleMotor.h \
+  ..\devLib\dbus.h ..\algLib\kinematics.h
