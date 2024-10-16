@@ -36,13 +36,15 @@ PidParam Roll1PosParam[2];
 
 PathPlan ArmPath;
 
+
 float kp1,kp2,kd1,kd2;
 void loadParam()
-{
+{  
     Yaw1.setPlan(0,&Yaw1Param[0]);
     Yaw1.setParam(0,0,0,90,1,0);
 //    Yaw1.setPlan(1,&Yaw1Param[1]);
 //    Yaw1.setParam(0,0,0,200,3.6,0);
+
     
     Pitch1.setPlan(0,&Pitch1Param[0]);
     Pitch1.setParam(0,0,0,200,7.2,0);
@@ -124,8 +126,7 @@ void DEBUG()
     }
     if(DEBUG_MODE == 2)
     {  
-
-        tarJointState = pathPlanCalt(&ArmPath,nowPoint,tarPoint,0.2,1);
+        tarJointState = pathPlanCalt(&ArmPath,nowPoint,tarPoint,0.1,1);
         Arm.ctrlPosition(tarJointState);
         if(Arm.PangPangCheck(judge_force,1000,3000)){
             DEBUG_MODE = 3 ;

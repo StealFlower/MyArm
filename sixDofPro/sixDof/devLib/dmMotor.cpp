@@ -174,9 +174,7 @@ void DmMotor::ctrlPosition(float setPosition,float tff,float vdes)
     if(fabs(tff)<0.0001f && fabs(vdes)<0.0001f)
         mitCtrl(setPos_rad, paramList[planIndex]->v_des, paramList[planIndex]->kp, paramList[planIndex]->kd, paramList[planIndex]->t_ff);
     else 
-        mitCtrl(setPos_rad, vdes, paramList[planIndex]->kp, paramList[planIndex]->kd, tff);
-
-       
+        mitCtrl(setPos_rad, vdes, paramList[planIndex]->kp, paramList[planIndex]->kd, tff);       
 }
 
 float DmMotor::getPosition()

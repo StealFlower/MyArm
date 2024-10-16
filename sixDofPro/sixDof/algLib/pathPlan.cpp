@@ -170,13 +170,14 @@ JointState pathPlanCalt(PathPlan *path, EndPoint pos0, EndPoint pos1,float veloc
     return tempJointState;
 }
 
+
 void clearTime(PathPlan *path1, PathPlan *path2, PathPlan *path3, PathPlan *path4,
     PathPlan *path5, PathPlan *path6, PathPlan *path7, PathPlan *path8,PathPlan *path9)
 {
     memset(path1, 0, sizeof(*path1));
     if (path2 != 0)
         memset(path2, 0, sizeof(*path2));
-    if (path3 != 0)
+    if (path3 != 0) 
         memset(path3, 0, sizeof(*path3));
     if (path4 != 0)
         memset(path4, 0, sizeof(*path4));

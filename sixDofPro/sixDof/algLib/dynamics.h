@@ -186,7 +186,7 @@ public:
 
 
 };
-
+int sgn(float z);
 extern Dynamics dynamics;
 
 #endif

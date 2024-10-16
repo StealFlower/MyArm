@@ -2,6 +2,15 @@
 #include "SMUniversal.h"
 #include "arm.h"
 
+int sgn(float z)
+{
+    if(z>0)
+        return 1;
+    else if(z<0)
+        return -1;
+    else 
+        return 0;
+}
 //´ıÌî³ä
 Dynamics::Dynamics()
 {
@@ -101,7 +110,7 @@ JointTorque Dynamics::GetJointTorque(JointState jointstate,EndForce end_force)
     M3_Q3 = (a3 * a3 * m3 + Izz3);
     M3_Q2 = (a3 * m3 * (a2 * cosf(q3) + a3) + Izz3);
     
-    tao3 = M3_Q2 * qdd2 + M3_Q3 * qdd3 + C3_Q1Q1 * qd1 * qd1 + C3_Q2Q2 * qd2 * qd2 + G3;
+    tao3 = M3_Q2 * qdd2 + M3_Q3 * qdd3 + C3_Q1Q1 * qd1 * qd1 + C3_Q2Q2 * qd2 * qd2 + G3 - 0.6*sgn(qd3);
 
     
     G2 = tao3 + acc1 * cosf(q2) * (9.81 * m2 + 9.81 * m3);
@@ -111,7 +120,7 @@ JointTorque Dynamics::GetJointTorque(JointState jointstate,EndForce end_force)
     C2_Q3Q3 = -a2 * a3 * m3 * sinf(q3);
     M2_Q3 = a2 * a3 * m3 * cosf(q3);
     M2_Q2 = (a2 * (a2 * m2 + a2 * m3 + a3 * m3 * cosf(q3)) + Izz2);
-    tao2 = M2_Q2 * qdd2 + M2_Q3 * qdd3 + C2_Q1Q1 * qd1 * qd1 + C2_Q2Q2 * qd2 * qd2 + C2_Q2Q3 * qd2 * qd3 + C2_Q3Q3 * qd3 * qd3 + G2;
+    tao2 = M2_Q2 * qdd2 + M2_Q3 * qdd3 + C2_Q1Q1 * qd1 * qd1 + C2_Q2Q2 * qd2 * qd2 + C2_Q2Q3 * qd2 * qd3 + C2_Q3Q3 * qd3 * qd3 + G2 - 0.36*sgn(qd2);
 
 
 

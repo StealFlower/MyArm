@@ -33,6 +33,7 @@ JointAngle RoboticArm::CalculateToMech(JointAngle calculate_angle)
     mech_angle.theta6 = calculate_angle.theta6*THETA6_RPS_TO_MECH_RATIO; 
     return mech_angle;    
 }
+
 //默认正解
 //输出 tempPoint--此刻末端位姿 xyz单位m pyr旋转顺序--yxz
 void RoboticArm::GetNowParam(void) 
@@ -130,10 +131,12 @@ void RoboticArm::GetNowParam(void)
                 };    
 
     memcpy(Jacobin_inv,mat_2,sizeof(mat_2));
-    
-    now_end_state.ax = Jacobin_inv[0][0]*now_joint_state.ddq1+Jacobin_inv[1][0]*now_joint_state.ddq2+Jacobin_inv[2][0]*now_joint_state.ddq3;
-    now_end_state.ay = Jacobin_inv[0][1]*now_joint_state.ddq1+Jacobin_inv[1][1]*now_joint_state.ddq2+Jacobin_inv[2][1]*now_joint_state.ddq3;
-    now_end_state.az = Jacobin_inv[0][2]*now_joint_state.ddq1+Jacobin_inv[1][2]*now_joint_state.ddq2+Jacobin_inv[2][2]*now_joint_state.ddq3;                    
+                
+    float ff = 0.36*sgn(now_joint_state.dq2)+0.36*now_joint_state.dq2,fff = 0.6*sgn(now_joint_state.dq3)+0.36*now_joint_state.dq3;    
+    now_end_state.ax = Jacobin_inv[0][0]*now_joint_state.ddq1+Jacobin_inv[1][0]*(now_joint_state.ddq2-ff)+Jacobin_inv[2][0]*(now_joint_state.ddq3-fff);
+    now_end_state.ay = Jacobin_inv[0][1]*now_joint_state.ddq1+Jacobin_inv[1][1]*(now_joint_state.ddq2-ff)+Jacobin_inv[2][1]*(now_joint_state.ddq3-fff);
+    now_end_state.az = Jacobin_inv[0][2]*now_joint_state.ddq1+Jacobin_inv[1][2]*(now_joint_state.ddq2-ff)+Jacobin_inv[2][2]*(now_joint_state.ddq3-fff);                    
+
 }
 
 void RoboticArm::ctrlPosition(JointState tarstate)
@@ -153,9 +156,9 @@ void RoboticArm::ctrlPosition(JointState tarstate)
     now_state.q1 = now_joint_state.q1;
     now_state.q2 = now_joint_state.q2;
     now_state.q3 = now_joint_state.q3;
-    now_state.dq1 = 0;
-    now_state.dq2 = 0;
-    now_state.dq3 = 0;    
+    now_state.dq1 = now_joint_state.dq1;
+    now_state.dq2 = now_joint_state.dq2;
+    now_state.dq3 = now_joint_state.dq3;    
     now_state.ddq1 = 0;
     now_state.ddq2 = 0;
     now_state.ddq3 = 0;    
@@ -168,10 +171,13 @@ void RoboticArm::ctrlPosition(JointState tarstate)
     JointAngle set_joint = CalculateToMech(CalculateAngleHandle(kine.GetJointAngle(tar_point)));
     
     JointTorque set_torque = dyna.GetJointTorque(now_state);
-  
-    Yaw1.ctrlPosition(set_joint.theta1,-set_torque.tao1*0.6,-tar_velocity[0]);
-    Pitch1.ctrlPosition(set_joint.theta2,-set_torque.tao2*0.6,-tar_velocity[1]);    
-    Pitch2.ctrlPosition(set_joint.theta3,set_torque.tao3*0.6,tar_velocity[2]);
+    
+    Yaw1.ctrlPosition(set_joint.theta1,-set_torque.tao1,0);
+    Pitch1.ctrlPosition(set_joint.theta2,-set_torque.tao2,0);    
+    Pitch2.ctrlPosition(set_joint.theta3,set_torque.tao3,0);  
+//    Yaw1.ctrlPosition(set_joint.theta1,-set_torque.tao1*0.6,-tar_velocity[0]);
+//    Pitch1.ctrlPosition(set_joint.theta2,-set_torque.tao2*0.6,-tar_velocity[1]);    
+//    Pitch2.ctrlPosition(set_joint.theta3,set_torque.tao3*0.6,tar_velocity[2]);
     Roll1.ctrlPosition(set_joint.theta4);
     wrist.ctrlPosition(set_joint.theta6,set_joint.theta5);
     
@@ -214,12 +220,12 @@ uint8_t RoboticArm::exitStatus(EndForce maxForce, float deathRoomTime, float out
     return 0;    
 }    
 
-
+float r;
 uint8_t RoboticArm::PangPangCheck(float maxForce, float deathRoomTime, float outTime)
 {   
     //默认err为pid位置环的误差，有输入值时err为设定位置与当前值的误差  
 //    testttt = now_end_state.ax + 0.54*(delayTime - deathRoomTime)*0.001 +0.56;             
-    float r = pang_pang_lpf.Apply(now_end_state.ax);
+    r = pang_pang_lpf.Apply(now_end_state.ax);
     if (fabs(delayTime) <0.0001f) // 首次开始
     {
     }

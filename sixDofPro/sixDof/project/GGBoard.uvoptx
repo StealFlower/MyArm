@@ -263,27 +263,27 @@
         <Ww>
           <count>22</count>
           <WinNumber>1</WinNumber>
-          <ItemText>r</ItemText>
+          <ItemText>Arm</ItemText>
         </Ww>
         <Ww>
           <count>23</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Arm</ItemText>
+          <ItemText>nowPoint</ItemText>
         </Ww>
         <Ww>
           <count>24</count>
           <WinNumber>1</WinNumber>
-          <ItemText>nowPoint</ItemText>
+          <ItemText>tarPoint</ItemText>
         </Ww>
         <Ww>
           <count>25</count>
           <WinNumber>1</WinNumber>
-          <ItemText>tarPoint</ItemText>
+          <ItemText>fv_1</ItemText>
         </Ww>
         <Ww>
           <count>26</count>
           <WinNumber>1</WinNumber>
-          <ItemText>set_torque</ItemText>
+          <ItemText>fv_2</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

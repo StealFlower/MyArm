@@ -504,7 +504,6 @@ void Can::disforceHandle()
 
 }
 
-u8 Pitch2CheckFlag = 1;
 /// @brief 接收中断回调函数
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
@@ -523,7 +522,7 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
                 if (motorList[0][can.can1RxMsg.StdId - 0x201].motorPoint != 0)
                     motorList[0][can.can1RxMsg.StdId - 0x201].motorPoint->canHandle(can.can1RxMsg.rxData);
             }
-
+      
             //小米电机数据处理
 //			if(can.can1RxMsg.rxHeader.IdType == FDCAN_EXTENDED_ID){
 //				for(uint8_t i=0;i< CyberMotor::objectNum;i++)
