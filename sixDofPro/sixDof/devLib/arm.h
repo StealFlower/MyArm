@@ -4,6 +4,7 @@
 #include "kinematics.h"
 #include "dynamics.h"
 #include "cycle.h"
+#include "filter.h"
 
 #define RAD_TO_DEGREE 57.295779513f
 #define DEGREE_TO_RAD 0.017452007f
@@ -52,14 +53,19 @@ public:
 	float delayTime;
     Cycle armcycle;
     float Jacobin[3][3];
+    float Jacobin_inv[3][3];
+
     void GetNowParam(void);
+
+    Lpf2p  pang_pang_lpf;
     uint8_t exitStatus(EndForce maxForce, float deathRoomTime, float outTime);
+    uint8_t PangPangCheck(float maxForce, float deathRoomTime, float outTime);
     
     JointAngle MechToCalculate(JointAngle mech_angle);
     JointAngle CalculateToMech(JointAngle calculate_angle);
     JointAngle CalculateAngleHandle(JointAngle calculate_angle);
     
-    void ctrlPosition(JointState tarstate,EndForce extern_force = EndForce(),u8 mode = 0);
+    void ctrlPosition(JointState tarstate);
 };
 
 extern RoboticArm Arm;

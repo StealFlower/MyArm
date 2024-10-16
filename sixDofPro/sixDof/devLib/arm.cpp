@@ -2,11 +2,12 @@
 #include "SMUniversal.h"
 
 MechParam mech;
+RoboticArm Arm;
 
 RoboticArm :: RoboticArm()
 {
+    pang_pang_lpf.SetCutoffFreq(500,5);
 }
-
 //将电机的角度转换成解算模型的角度
 JointAngle RoboticArm::MechToCalculate(JointAngle mech_angle)
 {
@@ -32,7 +33,6 @@ JointAngle RoboticArm::CalculateToMech(JointAngle calculate_angle)
     mech_angle.theta6 = calculate_angle.theta6*THETA6_RPS_TO_MECH_RATIO; 
     return mech_angle;    
 }
-
 //默认正解
 //输出 tempPoint--此刻末端位姿 xyz单位m pyr旋转顺序--yxz
 void RoboticArm::GetNowParam(void) 
@@ -45,12 +45,14 @@ void RoboticArm::GetNowParam(void)
     now_joint_angle.theta6 = wrist.getRollAngle()*THETA6_MECH_TO_RPS_RATIO;
     
     //x,y,z正解
-    float c1,s1,c2,s2,c23,s23;
+    float c1,s1,c2,s2,c3,s3,c23,s23;
     
     c1 = cosf(now_joint_angle.theta1);
     s1 = sinf(now_joint_angle.theta1);
     c2 = cosf(now_joint_angle.theta2);
     s2 = sinf(now_joint_angle.theta2);    
+    c3 = cosf(now_joint_angle.theta3);
+    s3 = sinf(now_joint_angle.theta3);
     c23 = cosf(now_joint_angle.theta2 + now_joint_angle.theta3);
     s23 = sinf(now_joint_angle.theta2 + now_joint_angle.theta3);
     
@@ -66,7 +68,6 @@ void RoboticArm::GetNowParam(void)
     s5 = sinf(now_joint_angle.theta5);
     c6 = cosf(now_joint_angle.theta6);
     s6 = sinf(now_joint_angle.theta6);    
-
 
     float rmat[3][3]={
         {c1*c5*c23 - s5*(s1*s4 + c1*c4*s23), s6*(c5*(s1*s4 + c1*c4*s23) + c1*c23*s5) - c6*(c4*s1 - c1*s4*s23),s6*(c4*s1 - c1*s4*s23) + c6*(c5*(s1*s4 + c1*c4*s23) + c1*c23*s5)},
@@ -99,11 +100,18 @@ void RoboticArm::GetNowParam(void)
 //  -s1*c2*l1 - s1*c23*l2  -c1*s2*l1-c1*s23*l2  -c1*s23*l2
 //  c1*c2*l1 + c1*c23*l2  -s1*s2*l1-s1*s23*l2  -s1*s23*l2
 //  0                     c2*l2+c23*l2         c23*l2
-    float mat[3][3] = {{(-s1*c2*mech.l1 - s1*c23*mech.l2),(-c1*s2*mech.l1-c1*s23*mech.l2),(-c1*s23*mech.l2)},
+
+//雅可比矩阵的逆
+//  -s1/alp_2, -c1*c23/alp_1,c1*(c2+c23)/alp_1 ,
+//  c1/alp_2,  -c23*s1/alp_1,s1*(c2+c23)/alp_1 ,
+//  0       ,-s23/alp_1   ,(s2*mech.l1+s23*mech.l2)/(mech.l2*alp_1)
+//    alp_1 = s2*c23*l1-c2*s23*l2;                             
+//    alp_2 = c2*l1+c23*l2;
+    float mat_1[3][3] = {{(-s1*c2*mech.l1 - s1*c23*mech.l2),(-c1*s2*mech.l1-c1*s23*mech.l2),(-c1*s23*mech.l2)},
                             {(c1*c2*mech.l1 + c1*c23*mech.l2),(-s1*s2*mech.l1-s1*s23*mech.l2),( -s1*s23*mech.l2)},
                             {0,(c2*mech.l2+c23*mech.l2),(c23*mech.l2)}};
 
-    memcpy(Jacobin,mat,sizeof(mat));
+    memcpy(Jacobin,mat_1,sizeof(mat_1));
         
     now_end_state.x = now_end_point.xPos;
     now_end_state.y = now_end_point.yPos;
@@ -112,16 +120,27 @@ void RoboticArm::GetNowParam(void)
     now_end_state.vx = Jacobin[0][0]*now_joint_state.dq1+Jacobin[0][1]*now_joint_state.dq2+Jacobin[0][2]*now_joint_state.dq3;
     now_end_state.vy = Jacobin[1][0]*now_joint_state.dq1+Jacobin[1][1]*now_joint_state.dq2+Jacobin[1][2]*now_joint_state.dq3;
     now_end_state.vz = Jacobin[2][0]*now_joint_state.dq1+Jacobin[2][1]*now_joint_state.dq2+Jacobin[2][2]*now_joint_state.dq3;
-                            
-    now_end_state.ax = Jacobin[0][0]*now_joint_state.ddq1+Jacobin[0][1]*now_joint_state.ddq2+Jacobin[0][2]*now_joint_state.ddq3;
-    now_end_state.ay = Jacobin[1][0]*now_joint_state.ddq1+Jacobin[1][1]*now_joint_state.ddq2+Jacobin[1][2]*now_joint_state.ddq3;
-    now_end_state.az = Jacobin[2][0]*now_joint_state.ddq1+Jacobin[2][1]*now_joint_state.ddq2+Jacobin[2][2]*now_joint_state.ddq3;    
+
+    float alp_1 = s2*c23*mech.l1-c2*s23*mech.l2;                             
+    float alp_2 = c2*mech.l1+c23*mech.l2;
+    float mat_2[3][3] = {
+                {-s1/alp_2,c1/alp_2,0},
+                {-c1*c23/alp_1,-c23*s1/alp_1,-s23/alp_1},
+                {c1*(c2+c23)/alp_1,s1*(c2+c23)/alp_1,(s2*mech.l1+s23*mech.l2)/(mech.l2*alp_1)}
+                };    
+
+    memcpy(Jacobin_inv,mat_2,sizeof(mat_2));
+    
+    now_end_state.ax = Jacobin_inv[0][0]*now_joint_state.ddq1+Jacobin_inv[1][0]*now_joint_state.ddq2+Jacobin_inv[2][0]*now_joint_state.ddq3;
+    now_end_state.ay = Jacobin_inv[0][1]*now_joint_state.ddq1+Jacobin_inv[1][1]*now_joint_state.ddq2+Jacobin_inv[2][1]*now_joint_state.ddq3;
+    now_end_state.az = Jacobin_inv[0][2]*now_joint_state.ddq1+Jacobin_inv[1][2]*now_joint_state.ddq2+Jacobin_inv[2][2]*now_joint_state.ddq3;                    
 }
 
-void RoboticArm::ctrlPosition(JointState tarstate,EndForce extern_force,u8 mode)
+void RoboticArm::ctrlPosition(JointState tarstate)
 {
     EndPoint tar_point;
     JointState now_state;
+    float tar_velocity[3] = {0,0,0};
     
     tar_point.xPos = tarstate.q1;
     tar_point.yPos = tarstate.q2;
@@ -134,20 +153,25 @@ void RoboticArm::ctrlPosition(JointState tarstate,EndForce extern_force,u8 mode)
     now_state.q1 = now_joint_state.q1;
     now_state.q2 = now_joint_state.q2;
     now_state.q3 = now_joint_state.q3;
-    now_state.dq1 = now_joint_state.dq1;
-    now_state.dq2 = now_joint_state.dq2;
-    now_state.dq3 = now_joint_state.dq3;    
-    now_state.ddq1 = tarstate.ddq1;
-    now_state.ddq2 = tarstate.ddq2;
-    now_state.ddq3 = tarstate.ddq3;
+    now_state.dq1 = 0;
+    now_state.dq2 = 0;
+    now_state.dq3 = 0;    
+    now_state.ddq1 = 0;
+    now_state.ddq2 = 0;
+    now_state.ddq3 = 0;    
+
+    tar_velocity[0] = Jacobin_inv[0][0]*tarstate.dq1 + Jacobin_inv[0][1]*tarstate.dq2 + Jacobin_inv[0][2]*tarstate.dq3;
+    tar_velocity[1] = Jacobin_inv[1][0]*tarstate.dq1 + Jacobin_inv[1][1]*tarstate.dq2 + Jacobin_inv[1][2]*tarstate.dq3;
+    tar_velocity[2] = Jacobin_inv[2][0]*tarstate.dq1 + Jacobin_inv[2][1]*tarstate.dq2 + Jacobin_inv[2][2]*tarstate.dq3;
     
+   
     JointAngle set_joint = CalculateToMech(CalculateAngleHandle(kine.GetJointAngle(tar_point)));
     
     JointTorque set_torque = dyna.GetJointTorque(now_state);
-    
-    Yaw1.ctrlPosition(set_joint.theta1,-set_torque.tao1);
-    Pitch1.ctrlPosition(set_joint.theta2,-set_torque.tao2);
-    Pitch2.ctrlPosition(set_joint.theta3,set_torque.tao3);
+  
+    Yaw1.ctrlPosition(set_joint.theta1,-set_torque.tao1*0.6,-tar_velocity[0]);
+    Pitch1.ctrlPosition(set_joint.theta2,-set_torque.tao2*0.6,-tar_velocity[1]);    
+    Pitch2.ctrlPosition(set_joint.theta3,set_torque.tao3*0.6,tar_velocity[2]);
     Roll1.ctrlPosition(set_joint.theta4);
     wrist.ctrlPosition(set_joint.theta6,set_joint.theta5);
     
@@ -190,15 +214,38 @@ uint8_t RoboticArm::exitStatus(EndForce maxForce, float deathRoomTime, float out
     return 0;    
 }    
 
+
+uint8_t RoboticArm::PangPangCheck(float maxForce, float deathRoomTime, float outTime)
+{   
+    //默认err为pid位置环的误差，有输入值时err为设定位置与当前值的误差  
+//    testttt = now_end_state.ax + 0.54*(delayTime - deathRoomTime)*0.001 +0.56;             
+    float r = pang_pang_lpf.Apply(now_end_state.ax);
+    if (fabs(delayTime) <0.0001f) // 首次开始
+    {
+    }
+    delayTime += 2; //若任务运行频率为500Hz则默认为2ms
+    if (r > maxForce  && delayTime > deathRoomTime)
+    {
+        delayTime = 0;
+        return 1;
+    }
+    if (delayTime > outTime)
+    {
+        delayTime = 0;
+        return 1;
+    }
+    return 0;    
+}   
+
 JointAngle RoboticArm::CalculateAngleHandle(JointAngle calculate_angle)
 {
     JointAngle set_angle;
     set_angle = calculate_angle;
     if(fabs(calculate_angle.theta1)>PI/2)
         set_angle.theta1 = Yaw1.getPosition()*THETA1_MECH_TO_RPS_RATIO;
-    if(calculate_angle.theta2<PI/6 || calculate_angle.theta2>PI*5/6)
+    if(calculate_angle.theta2<PI/6 || calculate_angle.theta2>PI*8/9)
         set_angle.theta2 = (Pitch1.getPosition()-90)*THETA2_MECH_TO_RPS_RATIO;
-    if(calculate_angle.theta3 >-PI/6 || calculate_angle.theta3<-PI*2/3)
+    if(calculate_angle.theta3 >0 || calculate_angle.theta3<-PI*5/6)
         set_angle.theta3 = Pitch2.getPosition()*THETA3_MECH_TO_RPS_RATIO;    
     if(fabs(calculate_angle.theta5)>PI/2)
         set_angle.theta5 = wrist.getPitchAngle()*THETA5_MECH_TO_RPS_RATIO;
@@ -222,5 +269,3 @@ JointAngle RoboticArm::CalculateAngleHandle(JointAngle calculate_angle)
 
     return set_angle;
 }
-
-RoboticArm Arm;

@@ -96,7 +96,7 @@ public:
     void setParam(int planIndex, float p_des, float v_des, float kp, float kd, float t_ff);
     float setPosition;
     float posErr;
-    void ctrlPosition(float SetPosition,float tff = 0.000001f);
+    void ctrlPosition(float SetPosition,float tff = 0.000001f,float vdes = 0.000001f);
     float getPosition();
     
     /// 离线检测

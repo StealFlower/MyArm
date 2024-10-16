@@ -166,15 +166,16 @@ void DmMotor::setParam(int planIndex, float p_des, float v_des, float kp, float 
 }
 
 
-void DmMotor::ctrlPosition(float setPosition,float tff)
+void DmMotor::ctrlPosition(float setPosition,float tff,float vdes)
 {
     this->setPosition = setPosition;
     posErr = setPosition-canInfo.pos_dps;
     float setPos_rad = setPosition/57.295779513f;
-    if(fabs(tff)<0.0001f)
+    if(fabs(tff)<0.0001f && fabs(vdes)<0.0001f)
         mitCtrl(setPos_rad, paramList[planIndex]->v_des, paramList[planIndex]->kp, paramList[planIndex]->kd, paramList[planIndex]->t_ff);
-    else
-        mitCtrl(setPos_rad, paramList[planIndex]->v_des, paramList[planIndex]->kp, paramList[planIndex]->kd, tff);
+    else 
+        mitCtrl(setPos_rad, vdes, paramList[planIndex]->kp, paramList[planIndex]->kd, tff);
+
        
 }
 

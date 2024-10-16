@@ -50,7 +50,7 @@ void loadParam()
 //    Pitch1.setParam(0,0,0,150,7.5,0);
     
     Pitch2.setPlan(0,&Pitch2Param[0]);
-    Pitch2.setParam(0,0,0,150,0.8,0);
+    Pitch2.setParam(0,0,0,300,0.8,0);
 //    Pitch2.setPlan(1,&Pitch1Param[1]);
 //    Pitch2.setParam(0,0,0,150,7.5,0);
     
@@ -109,7 +109,7 @@ JointState NowJointState;
 
 
 EndPoint nowPoint;
-EndForce judge_force(1,0,0);
+float judge_force = 12;
 void DEBUG()
 { 
     Arm.GetNowParam();
@@ -118,16 +118,19 @@ void DEBUG()
     {
         nowPoint = Arm.now_end_point;
         tarPoint = nowPoint;
-        tarPoint.xPos = nowPoint.xPos + 0.2;
+        tarPoint.xPos = nowPoint.xPos + 0.16;
+        tarJointState.q1 = nowPoint.xPos;
+        
     }
     if(DEBUG_MODE == 2)
-    {
-        tarJointState = pathPlanCalt(&ArmPath,nowPoint,tarPoint,1);
+    {  
+
+        tarJointState = pathPlanCalt(&ArmPath,nowPoint,tarPoint,0.2,1);
         Arm.ctrlPosition(tarJointState);
-//        if(Arm.exitStatus(judge_force,1000,3000)){
-//            DEBUG_MODE = 3 ;
-//            clearTime(&ArmPath);
-//        }           
+        if(Arm.PangPangCheck(judge_force,1000,3000)){
+            DEBUG_MODE = 3 ;
+            clearTime(&ArmPath);
+        }           
     }
 //    NowJointState.q1 = Yaw1.getPosition()*THETA1_MECH_TO_RPS_RATIO;
 //    NowJointState.q2 = (Pitch1.getPosition()-90)*THETA2_MECH_TO_RPS_RATIO;

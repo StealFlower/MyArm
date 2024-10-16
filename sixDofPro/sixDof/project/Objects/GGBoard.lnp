@@ -49,6 +49,7 @@
 ".\objects\dynamics.o"
 ".\objects\iwdg.o"
 ".\objects\fdcan.o"
+".\objects\flash.o"
 ".\objects\startup_stm32g473xx.o"
 ".\objects\system_stm32g4xx.o"
 ".\objects\stm32g4xx_ll_pwr.o"
